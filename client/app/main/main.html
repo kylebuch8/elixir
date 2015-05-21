@@ -32,23 +32,26 @@
                     value=""
                     ng-modle="all"
                     ng-checked="all"
-                    ng-click="showAll()"/>
+                    ng-click="toggleAll()"/>
                 <span class="noselect">
                     All
                 </span>
             </label>
         </div>
-        <div class="workstream-button" ng-repeat="workstream in workstreams">
-            <label>
-                <input
+        <div class="workstream-toggle" ng-repeat="workstream in workstreams">
+            <!-- <label> -->
+                <!-- <input
                     type="checkbox"
                     ng-model="workstream.selected"
                     value="{{workstream.name}}"
-                    ng-click="filterTaskResult(workstream.name, selected, all)"/>
-                <span class="noselect" ng-style="workstream.selected === true  && { 'background-color': workstream.color }">
+                    ng-click="filterTaskResult(workstream.name, selected, all)"/> -->
+                <!-- <span class="noselect" style="box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.75);" ng-style="{ 'background-color': workstream.color }">
                     {{workstream.name}}
-                </span>
-            </label>
+                </span> -->
+                <ui-toggle active="workstream.selected" toggle-color="{{workstream.color}}" ng-click="filterTaskResult(workstream.name)"></ui-toggle>
+                <label ng-style="{'color': workstream.color}">{{workstream.name}}</label>
+
+            <!-- </label> -->
         </div>
     </div>
     <div class="row noselect">

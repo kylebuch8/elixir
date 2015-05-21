@@ -4,7 +4,8 @@ angular.module('elixirApp', [
   'ngCookies',
   'ngSanitize',
   'ngRoute',
-  'ngTouch'
+  'ngTouch',
+  'directives.toggle'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
